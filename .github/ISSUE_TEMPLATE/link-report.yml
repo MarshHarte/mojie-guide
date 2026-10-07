@@ -1,0 +1,32 @@
+name: 入口或访问问题
+description: 报告域名失效、跳转错误或访问指南中的具体问题。
+title: "[入口核查] "
+body:
+  - type: markdown
+    attributes:
+      value: 请勿填写账号、密码、订阅链接、Cookie、令牌或订单信息。不要把 HTTP 200 当作官方认证。
+  - type: input
+    id: domain
+    attributes:
+      label: 需要核对的域名
+      placeholder: 只填域名，不包含个人查询参数
+    validations:
+      required: true
+  - type: input
+    id: checked-at
+    attributes:
+      label: 检查时间（北京时间）
+      placeholder: YYYY-MM-DD HH:mm
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: 操作与实际结果
+      description: 说明打开了哪个页面或点击了哪个按钮，最终显示哪个品牌，以及错误提示。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 希望修正的内容

@@ -1,0 +1,24 @@
+{
+  "name": "魔戒",
+  "slug": "mojie",
+  "englishName": "MOJIE",
+  "title": "魔戒机场（Mojie）官方地址与使用指南",
+  "description": "查看 mojie魔戒机场官方地址与更新日期，保存常用访问入口，了解入口打不开、套餐规则、客户端和订阅的常见问题。",
+  "officialAddressText": "本页集中展示 mojie魔戒机场官方地址，由品牌运营方维护。选择下方入口访问，或复制地址保存；地址变动时以本页清单为准。",
+  "updatedAt": "2026-10-08",
+  "linksUpdatedAt": "2026-10-07",
+  "linksCheckedAt": "2026-10-07",
+  "siteUrl": null,
+  "repositoryUrl": "https://github.com/MarshHarte/mojie-guide",
+  "operatorStatement": "由魔戒品牌运营方维护。",
+  "promotion": {
+    "registrationService": "果冻云",
+    "registrationHost": "web1.guodongcloud.com"
+  },
+  "routes": [
+    { "id": "01", "name": "访问入口一", "url": "https://mojiegjc.com/", "domain": "mojiegjc.com", "pageTitleObserved": "魔戒机场", "checkedAt": "2026-10-07", "httpStatus": 200, "recommendable": true, "registrationBrandObserved": "果冻云", "registrationHostObserved": "web1.guodongcloud.com", "reviewNote": "已查看注册页；维护方确认进入果冻云为正常推广安排。" },
+    { "id": "02", "name": "访问入口二", "url": "https://mojieggw.com/", "domain": "mojieggw.com", "pageTitleObserved": "魔戒官网", "checkedAt": "2026-10-07", "httpStatus": 200, "recommendable": true, "registrationBrandObserved": "果冻云", "registrationHostObserved": "web1.guodongcloud.com", "reviewNote": "已查看注册页；维护方确认进入果冻云为正常推广安排。" },
+    { "id": "03", "name": "访问入口三", "url": "https://mojiegjsq.com/", "domain": "mojiegjsq.com", "pageTitleObserved": "魔戒加速器", "checkedAt": "2026-10-07", "httpStatus": 200, "recommendable": true, "registrationBrandObserved": "果冻云", "registrationHostObserved": "web1.guodongcloud.com", "reviewNote": "已查看注册页；维护方确认进入果冻云为正常推广安排。" },
+    { "id": "04", "name": "访问入口四", "url": "https://mojie-vpn.com/", "domain": "mojie-vpn.com", "pageTitleObserved": "魔戒VPN", "checkedAt": "2026-10-07", "httpStatus": 200, "recommendable": true, "registrationBrandObserved": "果冻云", "registrationHostObserved": "web1.guodongcloud.com", "reviewNote": "已查看注册页；维护方确认进入果冻云为正常推广安排。" }
+  ]
+}

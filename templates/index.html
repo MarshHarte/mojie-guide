@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7fc">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="魔戒访问指南">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+{{SITE_META}}
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="header wrap">
+    <a class="brand" href="#" aria-label="魔戒访问指南首页">
+      <img src="assets/mark.svg" width="40" height="40" alt="">
+      <span>魔戒<span class="brand-caption">MOJIE / 访问指南</span></span>
+    </a>
+    <nav aria-label="主导航">
+      <a class="active" href="#routes">入口导航</a>
+      <a href="#guide">使用指南</a>
+      <button class="bookmark" type="button" data-bookmark><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17l-6-4-6 4z"/></svg>收藏本页</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <span class="orbit-dot"></span><span class="orbit-spark">✦</span>
+        <div class="hero-symbol"><img src="assets/mark.svg" width="72" height="72" alt=""></div>
+      </div>
+      <p class="eyebrow">MOJIE · 让每次访问更清楚</p>
+      <h1 id="hero-title">魔戒机场<span>入口与使用指南</span></h1>
+      <p class="hero-description">常用地址、访问问题，一页查看。<br class="mobile-break">收藏这份指南，下次查找更方便。</p>
+      <div class="hero-meta">地址更新于 <time datetime="{{ADDRESS_DATE}}">{{ADDRESS_DATE}}</time></div>
+    </section>
+
+    <section class="routes-section wrap" id="routes" aria-labelledby="routes-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">EXPLORE THE LINKS</p><h2 id="routes-title">mojie魔戒机场官方地址</h2></div>
+        <span class="route-total">{{ACTIVE_ROUTE_COUNT}} 个访问入口</span>
+      </div>
+      <p class="section-intro">{{OFFICIAL_ADDRESS_TEXT}}</p>
+      <div class="route-grid">{{ROUTE_CARDS}}</div>
+      <div class="route-note"><span class="note-icon" aria-hidden="true">i</span><p>某个地址打不开时，可尝试其他入口。多个域名可能连接同一服务，不代表独立节点或速度差异。</p></div>
+    </section>
+
+    <section class="save-panel wrap" aria-labelledby="save-title">
+      <div class="save-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h12v17l-6-4-6 4z"/></svg></div>
+      <div><h2 id="save-title">收藏常用入口，下次访问更方便。</h2><p>保留本页链接，随时查看地址更新和使用指南。</p></div>
+      <button type="button" class="button button-soft" data-copy-page>复制本页链接 <span aria-hidden="true">↗</span></button>
+    </section>
+
+    <section class="guide wrap" id="guide" aria-labelledby="guide-title">
+      <div class="guide-intro"><p class="eyebrow">BEFORE YOU CONTINUE</p><h2 id="guide-title">魔戒入口打不开？<br>先看这三个环节。</h2><p>从网页访问、账户状态到客户端设置，<br>按问题所在环节逐步检查。</p></div>
+      <ol class="steps">
+        <li><span class="step-number">01</span><div><h3>页面打不开：记录具体错误</h3><p>记录域名与时间，检查其他网页是否正常。出现证书警告时先停止登录，一次超时不能说明服务已经停止。</p></div></li>
+        <li><span class="step-number">02</span><div><h3>进入账户：查看套餐状态</h3><p>在账户页面查看当前套餐、剩余流量及有效期。购买或续费前，阅读计费、设备限制和售后规则。</p></div></li>
+        <li><span class="step-number">03</span><div><h3>客户端出错：单独检查订阅</h3><p>网站访问与节点连接是不同环节。核对有效期、流量及客户端配置，反馈时不要公开个人订阅密钥。</p></div></li>
+      </ol>
+    </section>
+
+    <section class="faq wrap" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading"><div><p class="eyebrow">GOOD TO KNOW</p><h2 id="faq-title">访问前，你可能想知道</h2></div></div>
+      <div class="faq-grid">
+        <details><summary>魔戒访问入口怎么选择？<span aria-hidden="true">+</span></summary><p>从上方选择一个地址打开即可，也可使用“复制地址”保存。某个域名无法访问时，可尝试其他入口；已有账号的使用问题请通过账户页面的支持渠道反馈。</p></details>
+        <details><summary>如何查看地址是否经过更新？<span aria-hidden="true">+</span></summary><p>页面顶部显示地址更新日期。地址清单更新后会同步调整；普通文案修改或重新构建页面不会自动刷新这一日期。</p></details>
+        <details><summary>了解魔戒套餐时要看哪些规则？<span aria-hidden="true">+</span></summary><p>查看按月或按流量计费、流量有效期、设备限制和退款规则。当前价格、优惠活动及可选套餐，以账户页面显示的说明为准。</p></details>
+        <details><summary>网站正常，是否表示节点可用？<span aria-hidden="true">+</span></summary><p>网站入口用于浏览信息或管理账户，订阅链接用于获取配置，节点用于实际连接。它们需要分别检查，网页响应时间也不是代理节点速度。</p></details>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><div class="footer-brand"><img src="assets/mark.svg" width="25" height="25" alt=""><strong>魔戒访问指南</strong></div>{{REPOSITORY_LINK}}<a href="#main">回到顶部 ↑</a></footer>
+  <div class="toast" id="notice" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
