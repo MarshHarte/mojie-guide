@@ -4,7 +4,7 @@ title: "[入口核查] "
 body:
   - type: markdown
     attributes:
-      value: 请勿填写账号、密码、订阅链接、Cookie、令牌或订单信息。不要把 HTTP 200 当作官方认证。
+      value: 请勿填写账号、密码、订阅链接、Cookie、令牌或订单信息。首页响应正常不等于代理节点可用。
   - type: input
     id: domain
     attributes:
@@ -23,7 +23,7 @@ body:
     id: observation
     attributes:
       label: 操作与实际结果
-      description: 说明打开了哪个页面或点击了哪个按钮，最终显示哪个品牌，以及错误提示。
+      description: 说明打开了哪个页面或点击了哪个按钮、最终页面地址，以及错误提示。
     validations:
       required: true
   - type: textarea

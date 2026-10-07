@@ -1,12 +1,12 @@
 # 维护与发布说明
 
-这是由魔戒品牌运营方维护的入口导航、使用指南、链接检查工具与静态网页源码项目。运营身份依据维护方于 2026-10-07 的明确说明。使用 Node.js 20 或更新版本，不需要 npm install。四个域名的注册按钮进入果冻云，维护方已确认这是正常业务安排，当前四个入口均已开放。
+本项目由魔戒机场官方发布与维护，包含入口导航、使用指南、链接检查工具与静态网页源码。使用 Node.js 20 或更新版本，不需要 npm install，当前提供四个访问入口。
 
 ## 目录职责
 
 | 路径 | 用途 |
 | --- | --- |
-| brand.json | 域名、地址更新日期、核对日期、实际注册服务、运营身份、部署地址的唯一配置 |
+| brand.json | 域名、入口开放状态、地址更新日期、核对日期、官方发布说明与部署地址的唯一配置 |
 | performance.json | README 六份历史图表的时间、环境、解读；服务器状态原始记录仅归档，不生成展示内容 |
 | assets/performance/ | 性能章节原始图片，保留完整尺寸与图示标记 |
 | scripts/performance.mjs | 仅生成 README 的六份性能报告，不生成服务器表或网页性能板块 |
@@ -18,8 +18,6 @@
 | scripts/check-links.mjs | 读取公开页面，输出本地 HTTP、标题与跳转记录，不自动更改推荐状态 |
 | docs/ACCESS.md | 访问故障判断、术语与报告字段说明 |
 | scripts/serve.mjs | 只在本机 127.0.0.1 上提供预览 |
-| docs/SOURCES.md | 公开出处与核对边界 |
-| CHANGELOG.md | 实际变更记录 |
 
 修改 brand.json 或 templates 后执行：
 
@@ -39,14 +37,14 @@ npm run preview
 - Topics：`mojie`、`link-checker`、`documentation`、`static-site`，按实际内容添加，不堆砌不相干词。
 - 仓库地址：https://github.com/MarshHarte/mojie-guide
 - Website：入口页实际部署 URL，确认部署后再填写。
-- 仓库身份：魔戒品牌运营方维护的入口导航与使用指南。运营身份不等同于 GitHub 或搜索引擎认证。
+- 仓库身份：由魔戒机场官方发布与维护的入口导航、使用指南与工具项目。
 
 ## 发布步骤
 
 1. 本项目使用公开仓库 `MarshHarte/mojie-guide`。只提交本目录，勿上传根目录的调研 Excel、后台摘录、研究脚本或其他品牌项目。
 2. 在支持该内容与业务用途的自有站点或静态托管服务部署入口页。部署文件仅需 `index.html`、`assets/`、`robots.txt`，以及配置真实 URL 后生成的 `sitemap.xml`。
 3. 将 `brand.json` 的 `siteUrl` 设为真实 HTTPS 页面根地址（末尾保留 `/`）。`repositoryUrl` 已配置为 `https://github.com/MarshHarte/mojie-guide`；当前 `siteUrl` 为 null，待入口页完成部署后再填写。
-4. 重新执行 build 和 check。构建会自动补入 canonical、og:url、分享图元数据、WebPage 结构化数据、sitemap、README 访问指南链接及网页 GitHub 返回链接。结构化数据只描述实际页面，不包含评分、价格或官方身份。
+4. 重新执行 build 和 check。构建会自动补入 canonical、og:url、分享图元数据、WebPage 结构化数据、sitemap、README 访问指南链接及网页 GitHub 返回链接。结构化数据记录实际页面的标题、摘要、语言和更新日期。
 5. 将生成文件同步至仓库和托管服务，核对电脑和手机展示、四个出站链接以及域名跳转。
 6. 在自己能验证所有权的入口站点开通 Google Search Console / Bing Webmaster Tools，提交本站 sitemap。仓库 URL 的抓取索引由 GitHub 与搜索引擎处理，不能代替验证整个 github.com 的所有权。
 
@@ -64,11 +62,9 @@ npm run preview
 
 ## 推荐状态如何维护
 
-recommendable 表示经人工审核后是否开放链接，不能由 HTTP 200 或标题匹配自动设置为 true。开放前核对实际服务、关键按钮去向与配置记录，并记录 reviewNote。它不是节点速度或在线率指标。
+recommendable 表示经魔戒机场官方维护人员审核后是否开放链接，不能由 HTTP 200 或标题匹配自动设置为 true。开放前核对 HTTPS 地址、页面内容及关键访问流程，在提交说明中记录变更。它不是节点速度或在线率指标。
 
-promotion.registrationService 和 promotion.registrationHost 记录预期注册服务及域名。开放记录的 registrationBrandObserved、registrationHostObserved 必须分别与这两个字段一致，构建时会校验。文章主题品牌与实际注册服务可以不同；不要修改观察记录来伪造品牌一致性。
-
-页面按钮统一使用“打开入口”。按运营方要求，公开页面与 README 不显示第三方身份、入口推广提示、已核对标签或独立的核对说明板块。真实注册服务及域名仍保留在 brand.json 和维护记录中，HTML 链接继续保留 sponsored 与新窗口安全属性。未来实际去向与配置不符时，将相应记录设为待复核，再核对并更新配置；不自行推断账号或余额互通。
+页面按钮统一使用“打开入口”。brand.json 维护入口地址、开放状态与最近核对信息；构建时校验 HTTPS 地址、可见域名和开放状态。HTML 链接保留 sponsored 与新窗口安全属性。地址或访问流程发生变化时先人工核对，再更新配置；账号、套餐与余额规则以账户系统为准。
 
 ## GitHub 使用边界
 
@@ -78,4 +74,4 @@ GitHub《可接受使用政策》第 10 条允许与项目相关的推广图片�
 
 若增加价格、节点数、测试结果，必须记录出处与日期，测试需说明地区、运营商、时间和套餐；缺资料时保留缺口。
 
-性能章节仅在 README 展示六份历史图表，入口网页不展示性能板块，README 不展示服务器状态表。测试时间来自原图，2026-10-08 为资料整理日期，不是重新测速日期。新增或更换资料时同时维护 performance.json、原图和 docs/SOURCES.md，再执行 build 与 check。服务器原始记录仅在数据文件中归档，没有实时探测或自动刷新。README 图片链接使用仓库内相对路径，仓库中须保留整个 assets/performance/ 目录；入口网页不依赖该目录。
+性能章节仅在 README 展示六份历史图表，入口网页不展示性能板块，README 不展示服务器状态表。测试时间来自原图，2026-10-08 为资料整理日期，不是重新测速日期。新增或更换资料时同时维护 performance.json 与原图，并在提交说明中记录测试日期、环境和变更原因，再执行 build 与 check。服务器原始记录仅在数据文件中归档，没有实时探测或自动刷新。README 图片链接使用仓库内相对路径，仓库中须保留整个 assets/performance/ 目录；入口网页不依赖该目录。

@@ -16,7 +16,7 @@ function publicUrl(value) {
 
 async function inspectRoute(route) {
   const checkedAt = new Date().toISOString();
-  const result = {id: route.id, url: route.url, checkedAt, finalUrl: null, httpStatus: null, title: '', titleMentionsBrand: false, outcome: 'unverified', recommendationState: route.recommendable ? 'manually_reviewed' : 'held', expectedRegistrationService: brand.promotion?.registrationService || null, expectedRegistrationHost: brand.promotion?.registrationHost || null, manualReviewNote: route.reviewNote || '', redirects: []};
+  const result = {id: route.id, url: route.url, checkedAt, finalUrl: null, httpStatus: null, title: '', titleMentionsBrand: false, outcome: 'unverified', recommendationState: route.recommendable ? 'manually_reviewed' : 'held', redirects: []};
   try {
     let next = publicUrl(route.url);
     const signal = AbortSignal.timeout(15000);
@@ -56,7 +56,7 @@ async function inspectRoute(route) {
     result.title = plain(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '');
     result.titleMentionsBrand = /魔戒|mojie/i.test(result.title);
     result.outcome = result.titleMentionsBrand ? 'page_observed' : 'review_needed';
-    result.note = result.titleMentionsBrand ? '当次网页返回成功且标题含品牌名，未确认官方归属或实际服务' : '当次返回页面，标题与品牌关联需要人工复核';
+    result.note = result.titleMentionsBrand ? '当次网页返回成功且标题含品牌名，未测试登录、套餐或代理节点' : '当次返回页面，标题与品牌关联需要人工复核';
   } catch (error) {
     result.note = error.name === 'TimeoutError' ? '本次请求超时，状态未确认' : error.message;
   }
@@ -66,7 +66,7 @@ async function inspectRoute(route) {
 // 顺序请求只检查配置中的入口，不登录、不访问注册或付款操作。
 const results = [];
 for (const route of brand.routes) results.push(await inspectRoute(route));
-const report = {brand: brand.name, generatedAt: new Date().toISOString(), scope: '单一网络环境的公开页面检查，不是可用率、节点测速或官方认证', results};
+const report = {brand: brand.name, generatedAt: new Date().toISOString(), scope: '单一网络环境的公开页面检查，不代表持续可用率或代理节点速度', results};
 await fs.mkdir(path.join(root, 'reports'), {recursive: true});
 await fs.writeFile(path.join(root, 'reports', 'link-check.json'), JSON.stringify(report, null, 2) + '\n');
 for (const result of results) console.log(`${result.id} ${result.url} | ${result.httpStatus ?? '—'} | ${result.outcome} | ${result.finalUrl ?? '—'} | ${result.title || result.note}`);

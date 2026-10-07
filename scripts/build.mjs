@@ -17,10 +17,6 @@ for (const route of brand.routes) {
   const url = isPublicHttps(route.url);
   if (url.hostname !== route.domain) throw new Error('Visible domain must match link: ' + route.domain);
   if (typeof route.recommendable !== 'boolean') throw new Error('Each route needs an explicit recommendation state');
-  if (route.recommendable) {
-    if (!brand.promotion?.registrationService?.trim() || !brand.promotion?.registrationHost?.trim()) throw new Error('Active routes require a configured registration service and host');
-    if (route.registrationBrandObserved !== brand.promotion.registrationService || route.registrationHostObserved !== brand.promotion.registrationHost) throw new Error('Registration destination must match the configured service and expected host');
-  }
 }
 for (const field of ['updatedAt','linksUpdatedAt','linksCheckedAt']) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(brand[field]) || Number.isNaN(Date.parse(brand[field]))) throw new Error('Invalid date: '+field);

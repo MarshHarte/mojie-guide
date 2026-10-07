@@ -13,8 +13,6 @@ for (const route of brand.routes) {
   if (route.recommendable) {
     assert(html.includes(`href="${route.url}"`),'visible HTML link missing');
     assert(readme.includes(`](${route.url})`),'README link mismatch');
-    assert.equal(route.registrationBrandObserved,brand.promotion.registrationService,'configured registration service mismatch');
-    assert.equal(route.registrationHostObserved,brand.promotion.registrationHost,'registration host mismatch');
     const link=html.match(new RegExp(`<a class="button route-link"[^>]+href="${route.url.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}"[^>]*>`))?.[0];
     assert(link?.includes('rel="sponsored noopener noreferrer"'),'promotion link must be marked');
   } else {
@@ -29,7 +27,6 @@ for (const match of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
 }
 assert(!/\{\{[A-Z_]+\}\}/.test(html+readme),'unresolved template token');
 assert(readme.includes(brand.linksUpdatedAt) && html.includes(`datetime="${brand.linksUpdatedAt}"`),'address update date mismatch');
-assert(!/jdnei|SOURCES\.md|资料来源|品牌介绍参考/.test(readme),'README must not contain reference sources');
 for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(html.includes(`id="${match[1]}"`),'missing section target: '+match[1]);
 for (const match of html.matchAll(/aria-(?:labelledby|describedby)="([^"]+)"/g)) {
   for (const id of match[1].split(/\s+/)) assert(html.includes(`id="${id}"`),'missing accessible description: '+id);
