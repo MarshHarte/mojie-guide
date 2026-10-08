@@ -134,6 +134,12 @@ Check the account page for current plans, prices, and promotion terms. Review da
 
 No. It changes when the address list is updated. Editing general text or rebuilding the page does not automatically refresh it.
 
+<a id="connection-terms"></a>
+
+## VPN, proxy subscriptions and client software
+
+VPN usually means a virtual private network. Chinese “jichang” services are subscription-based proxies; the broader label “accelerator” does not establish a particular protocol or game-acceleration capability. “科学上网” and “魔法” are informal terms, not plan features or speed guarantees. Use the account documentation to choose the supported client and subscription format.
+
 ## Updates and feedback
 
 Actual changes are recorded in this repository's commit history. Report broken links, unexpected destinations, or documentation errors through an issue or a suggested correction. Use the account page's support channels for account, plan, and payment matters, and keep personal credentials out of public reports.
