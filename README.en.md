@@ -1,10 +1,10 @@
-# Mojie (魔戒机场) — Official Website Links and User Guide **(Updated 2026-10-08)**
+# Mojie (魔戒机场) — Official Website Links and User Guide **(Updated 2026-10-10)**
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · **English** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md)
 
 This project is officially published and maintained by Mojie. It provides current website links, address update dates, historical performance reports, and guidance on access problems, plans, clients, and subscriptions. A static access page is also included.
 
-**Website addresses updated on 2026-10-08 (Beijing time, UTC+8)**
+**Website addresses updated on 2026-10-10 (Beijing time, UTC+8)**
 
 [Official links](#official-links) · [Performance reports](#performance) · [Troubleshooting](#troubleshooting) · [Plans and clients](#plans) · [FAQ](#faq)
 
